@@ -1,5 +1,10 @@
 I1=imread('jump.jpg');
+
 I2=imread('jump2.jpg');
+
+figure,imshow(I1),title('img1');
+
+figure,imshow(I2),title('img2');
 man=imgaussfilt(I1,0.5);
 [h, w, c] = size(man);
 
@@ -38,7 +43,7 @@ intI2=im2uint8(I2);
 resizeI2 = imresize(intI2,[480,319]);
 %add I2 to NewI1
 hotel=imadd(resize_NewI1,resizeI2);
-imshowpair(hotel,color_man,'montage');
+figure,imshowpair(hotel,color_man,'montage');
 
 
 
@@ -102,12 +107,11 @@ comp_img=zeros(h1,w1,s);
 comp_img=comp.*I2;
 
 
-figure,imshow(I),title('figuer1');
+% figure,imshow(I),title('figuer1');
+% figure,imshow(I2),title('figuer2');
 
-figure,imshow(I2),title('figuer2');
 
-
-figure,imshow(comp_img),title('figuer3');
+figure,imshow(comp_img),title('combination image');
 
 
 
